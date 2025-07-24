@@ -249,7 +249,7 @@ export function AppointmentCard({
                 </h3>
                 {userRole === "DOCTOR" && (
                   <p className="text-sm text-muted-foreground">
-                    {/* @ts-ignore */}
+                    {/* @ts-expect-error */}
                     {otherParty.email as string}
                   </p>
                 )}
@@ -348,7 +348,7 @@ export function AppointmentCard({
                   </p>
                   {userRole === "DOCTOR" && (
                     <p className="text-muted-foreground text-sm">
-                      {/* @ts-ignore */}
+                      {/* @ts-expect-error */}
                       {otherParty.email}
                     </p>
                   )}

@@ -308,7 +308,7 @@ export async function bookAppointment(formData:FormData) {
  */
 async function createVideoSession() {
   try {
-    //@ts-ignore
+    //@ts-expect-error
     const session = await vonage.video.createSession({ mediaMode: "routed" });
     return session.sessionId;
   } catch (error:any) {

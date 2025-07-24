@@ -35,20 +35,20 @@ import { toast } from "sonner";
 import { BarLoader } from "react-spinners";
 import { Payout } from "@/lib/types";
 
-export function PendingPayouts({ payouts }:{payouts:Payout[]}) {
-  const [selectedPayout, setSelectedPayout] = useState<Payout|null>(null);
+export function PendingPayouts({ payouts }: { payouts: Payout[] }) {
+  const [selectedPayout, setSelectedPayout] = useState<Payout | null>(null);
   const [showApproveDialog, setShowApproveDialog] = useState(false);
 
   // Custom hook for approve payout server action
   const { loading, data, fn: submitApproval } = useFetch(approvePayout);
 
   // Handle view details
-  const handleViewDetails = (payout:Payout) => {
+  const handleViewDetails = (payout: Payout) => {
     setSelectedPayout(payout);
   };
 
   // Handle approve payout
-  const handleApprovePayout = (payout:Payout) => {
+  const handleApprovePayout = (payout: Payout) => {
     setSelectedPayout(payout);
     setShowApproveDialog(true);
   };
@@ -80,9 +80,7 @@ export function PendingPayouts({ payouts }:{payouts:Payout[]}) {
     <div>
       <Card className="bg-muted/20 border-emerald-900/20">
         <CardHeader>
-          <CardTitle className="text-xl font-bold ">
-            Pending Payouts
-          </CardTitle>
+          <CardTitle className="text-xl font-bold ">Pending Payouts</CardTitle>
           <CardDescription>
             Review and approve doctor payout requests
           </CardDescription>
@@ -196,9 +194,7 @@ export function PendingPayouts({ payouts }:{payouts:Payout[]}) {
                     <p className="text-sm font-medium text-muted-foreground">
                       Name
                     </p>
-                    <p className="">
-                      Dr. {selectedPayout.doctor.name}
-                    </p>
+                    <p className="">Dr. {selectedPayout.doctor.name}</p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">
@@ -210,17 +206,13 @@ export function PendingPayouts({ payouts }:{payouts:Payout[]}) {
                     <p className="text-sm font-medium text-muted-foreground">
                       Specialty
                     </p>
-                    <p className="">
-                      {selectedPayout.doctor.specialty}
-                    </p>
+                    <p className="">{selectedPayout.doctor.specialty}</p>
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">
                       Current Credits
                     </p>
-                    <p className="">
-                      {selectedPayout.doctor.credits}
-                    </p>
+                    <p className="">{selectedPayout.doctor.credits}</p>
                   </div>
                 </div>
               </div>
@@ -343,9 +335,7 @@ export function PendingPayouts({ payouts }:{payouts:Payout[]}) {
               <div className="bg-muted/20 p-4 rounded-lg border border-emerald-900/20">
                 <div className="flex justify-between mb-2">
                   <span className="text-muted-foreground">Doctor:</span>
-                  <span className="">
-                    Dr. {selectedPayout.doctor.name}
-                  </span>
+                  <span className="">Dr. {selectedPayout.doctor.name}</span>
                 </div>
                 <div className="flex justify-between mb-2">
                   <span className="text-muted-foreground">Amount to pay:</span>
@@ -355,9 +345,7 @@ export function PendingPayouts({ payouts }:{payouts:Payout[]}) {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">PayPal:</span>
-                  <span className=" text-sm">
-                    {selectedPayout.paypalEmail}
-                  </span>
+                  <span className=" text-sm">{selectedPayout.paypalEmail}</span>
                 </div>
               </div>
             </div>
