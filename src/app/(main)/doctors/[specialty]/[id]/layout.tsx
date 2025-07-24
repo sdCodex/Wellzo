@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/page-header";
 import { ReactNode } from "react";
 
 export async function generateMetadata({ params }:{params:{id:string}}) {
-  const { id } = await params;
+  const { id } = params;
 
   const { doctor } = await getDoctorById(id);
   return {
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }:{params:{id:string}}) {
 }
 
 export default async function DoctorProfileLayout({ children, params }:{children:ReactNode,params:{id:string}}) {
-  const { id } = await params;
+  const { id } = params;
   const { doctor } = await getDoctorById(id);
 
   if (!doctor) redirect("/doctors");
