@@ -32,7 +32,7 @@ import { updateDoctorStatus } from "@/actions/admin";
 import useFetch from "@/hooks/use-fetch";
 import { useEffect } from "react";
 import { BarLoader } from "react-spinners";
-import { Get_Doctors } from "@/types/form";
+import { Get_Doctors } from "@/lib/types";
 
 export function PendingDoctors({ doctors }: { doctors: Get_Doctors[] }) {
   const [selectedDoctor, setSelectedDoctor] = useState<Get_Doctors | null>(
@@ -138,7 +138,7 @@ export function PendingDoctors({ doctors }: { doctors: Get_Doctors[] }) {
       {/* Doctor Details Dialog */}
       {selectedDoctor && (
         <Dialog open={!!selectedDoctor} onOpenChange={handleCloseDialog}>
-          <DialogContent className="max-w-3xl">
+          <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto hide-scrollbar">
             <DialogHeader>
               <DialogTitle className="text-xl font-bold">
                 Doctor Verification Details
