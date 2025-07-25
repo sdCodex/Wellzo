@@ -172,7 +172,7 @@ export function PendingPayouts({ payouts }: { payouts: Payout[] }) {
       {/* Payout Details Dialog */}
       {selectedPayout && !showApproveDialog && (
         <Dialog open={!!selectedPayout} onOpenChange={closeDialogs}>
-          <DialogContent className="max-w-2xl">
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto hide-scrollbar">
             <DialogHeader>
               <DialogTitle className="text-xl font-bold ">
                 Payout Request Details
