@@ -5,6 +5,7 @@ import { PricingTable } from "@clerk/nextjs";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import PricingTableComponent from "@/components/pricingTableComponent";
+import { Button } from "@/components/ui/button";
 
 export default async function PricingPage() {
   return (
@@ -13,10 +14,12 @@ export default async function PricingPage() {
       <div className="flex justify-start mb-2">
         <Link
           href="/"
-          className="flex items-center text-muted-foreground hover:text-white transition-colors"
+          
         >
-          <ArrowLeft className="h-4 w-4 mr-2" />
+          <Button variant={"outline"}>
+            <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Home
+          </Button>
         </Link>
       </div>
 
