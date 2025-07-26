@@ -11,7 +11,7 @@ export default async function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       {/* Header Section */}
-      <div className="flex justify-start mb-2">
+      <div className="flex justify-start mb-5">
         <Link
           href="/"
           
